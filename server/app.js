@@ -12,9 +12,9 @@ var mongoose = require('mongoose');
 var config = require('./config/environment');
 
 // Connect to database
-mongoose.connect(config.mongo.uri, config.mongo.options);
-
-// Populate DB with sample data
+mongoose.connect(config.mongo.uri, config.mongo.options, function(e){
+	
+	// Populate DB with sample data
 if(config.seedDB) { require('./config/seed'); }
 
 // Setup server
@@ -38,3 +38,7 @@ server.listen(config.port, config.ip, function () {
 
 // Expose app
 exports = module.exports = app;
+		
+});
+
+
