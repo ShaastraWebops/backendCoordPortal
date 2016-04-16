@@ -1,0 +1,10 @@
+<?php
+session_start();
+if(!$_SESSION['auth'])
+{
+	header('location:page2.php');
+}
+?>
+<h1>WELCOME <br/>
+you are authenticated</hi>
+<a href="4.php"> Click here to Procced</a>

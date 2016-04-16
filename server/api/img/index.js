@@ -9,8 +9,10 @@ var upload = multer({ storage: storage, limits: {fileSize: 1000000}});
 var router = express.Router();
 
 router.get('/', controller.index);
-router.get('/:id', controller.show);
-router.post('/', upload.single('file'), controller.create);
+// router.get('/:id', controller.show);
+router.get('/:departmentName', controller.getFiles)
+router.get('/:departmentName/:fileName', controller.download);
+router.post('/:departmentName', upload.single('file'), controller.create);
 router.put('/:id', controller.update);
 router.patch('/:id', controller.update);
 router.delete('/:id', controller.destroy);
