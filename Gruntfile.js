@@ -40,7 +40,8 @@ module.exports = function (grunt) {
       dev: {
         options: {
           script: 'server/app.js',
-          debug: true
+          debug: true,
+          opts: ['--debug=5859']
         }
       },
       prod: {
@@ -103,7 +104,7 @@ module.exports = function (grunt) {
           '<%= yeoman.client %>/assets/images/{,*//*}*.{png,jpg,jpeg,gif,webp,svg}'
         ],
         options: {
-          livereload: false
+          livereload: true
         }
       },
       express: {
