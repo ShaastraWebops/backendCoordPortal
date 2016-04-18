@@ -8,5 +8,5 @@ module.exports = {
     uri: 'mongodb://localhost/img-dev'
   },
 
-  seedDB: true
+  seedDB: false
 };
